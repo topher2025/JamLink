@@ -205,3 +205,53 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+
+# Extra stuff:
+
+# --- Node/React frontend ---
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# --- OS/system files ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Docker ---
+*.log
+*.pid
+docker-compose.override.yml
+
+# --- Nginx ---
+devops/nginx/*.log
+devops/nginx/certs/
+devops/nginx/conf.d/
+
+# --- General ---
+*.bak
+*.tmp
+*.swp
+*.swo
+*.swn
+
+# --- Secrets/Sensitive files ---
+secrets/
+credentials.json
+*.key
+*.crt
+*.pem
+
+# --- Deployment scripts ---
+devops/scripts/*.log
+devops/scripts/*.sh~
+
+# --- Jupyter (if used for notebooks) ---
+*.ipynb_checkpoints
+
+# --- GitHub actions or CI/CD cache ---
+.github/
+.cache/
