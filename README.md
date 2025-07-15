@@ -77,7 +77,7 @@ jamlink/
 - [ ] User registration & login
 - [ ] Secure password hashing with bcrypt
 
-### Phase 2: Begin adding features: October, 2050
+### Phase 2: Begin adding features: October, 2025
 - [ ] User profiles with instruments and styles
 - [ ] Search/match musicians by filters
 - [ ] Real-time chat between matched users
@@ -91,7 +91,7 @@ jamlink/
 ### Phase 4: Mobile: July, 2026
 - [ ] Mobile-friendly Web UI
 - [ ] Apple app
-- [ ] Android aop
+- [ ] Android app
 
 ### Phase 5: Further updates and development: To infinity and beyond 🚀!
 - [ ] Spotify/YouTube/Apple Music integration?
