@@ -131,7 +131,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 
 # SECURITY WARNING: change this to ["https://<frontend-domain>.com"] for production
 CORS_ALLOWED_ORGINS = [
-    "http://localhost:3000",
+    "http://localhost:5173",
 ]
 
 AUTH_USER_MODEL = 'core.User'
