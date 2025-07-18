@@ -7,7 +7,10 @@ JamLink is a free platform for musicians to connect, jam, and perform together -
 
 ## Updates
 > [!IMPORTANT]
-> Finished the Roadmap, looking forward to starting the coding aspect. **7/9/2025**
+> Created the basic frontend server. **7/17/2025**
+
+- Created the basic backend server. **7/15/2025**
+- Finished the Roadmap, looking forward to starting the coding aspect. **7/9/2025**
 
 ---
 
