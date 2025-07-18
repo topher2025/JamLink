@@ -1,28 +1,27 @@
-import { useEffect, useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Layout from './components/Layout.jsx';
+import Home from './pages/Home.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import Login from './pages/Login.jsx';
+import Signup from './pages/Signup.jsx';
+
 
 function App() {
-    const [users, setUsers] = useState([]);
-    useEffect(() => {
-        fetch('http:127.0.0.1:8000/api/users/' , {
-            credentials: 'include'
-        })
-            .then(res => res.json())
-            .then(data => setUsers(data))
-            .catch(err => console.error(err));
-    }, []);
+    // const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+
 
     return (
-        <>
-            <div>
-                <h1>JamLink Users</h1>
-                <ul>
-                    {users.map(user => (
-                        <li key={user.id}>{user.username} - {user.instruments}</li>
-                    ))}
-                </ul>
-            </div>
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Layout><Dashboard /></Layout>} />
+                <Route path="/login" element={<Layout><Login /></Layout>} />
+                <Route path="/signup" element={<Layout><Signup /></Layout>} />
+            </Routes>
+        </Router>
     )
 }
 
