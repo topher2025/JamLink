@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Layout from './components/Layout.jsx';
 import Home from './pages/Home.jsx';
@@ -15,13 +15,13 @@ function App() {
 
 
     return (
-        <Router>
+        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Layout><Dashboard /></Layout>} />
                 <Route path="/login" element={<Layout><Login /></Layout>} />
                 <Route path="/signup" element={<Layout><Signup /></Layout>} />
             </Routes>
-        </Router>
+        </BrowserRouter>
     )
 }
 
