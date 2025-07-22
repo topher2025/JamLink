@@ -1,9 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Signup() {
-    const [form, setForm] = useState({ username: "", email: "", password: "", instruments: "", styles: ""});
+    const [step, setStep] = useState(1);
+    const [form, setForm] = useState({
+        username: "",
+        email: "",
+        password: "",
+        instruments: [],
+        styles: [],
+        location: "",
+    });
     const navigate = useNavigate();
+
+    const handleNext = () => setStep(step + 1);
+    const handleBack = () => setStep(step - 1);
 
     const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -30,14 +41,31 @@ export default function Signup() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <div>
             <h2>Sign Up</h2>
-            <input name="username" placeholder="Username" onChange={handleChange} />
-            <input name="email" placeholder="Email" onChange={handleChange} />
-            <input name="password" placeholder="Password" onChange={handleChange} />
-            <input name="re-enter-password" placeholder="Re-enter Password" onChange={handleChange} />
-            <input name="instruments" placeholder="Instruments" onChange={handleChange} />
-            <input name="styles" placeholder="Styles" onChange={handleChange} />
-        </form>
+            {step === 1 && (
+                <div className="credentials">
+                    <label htmlFor="username"></label>
+                    <input name="username" placeholder="Username" onChange={handleChange} type="text"></input>
+                    <input name="email" placeholder="Email" onChange={handleChange} type="email"/>
+                    <input name="password" placeholder="Password" onChange={handleChange} type="password"/>
+                    <input name="re-enter-password" placeholder="Re-enter Password" onChange={handleChange} type="password"/>
+                </div>
+            )}
+            {step === 2 && (
+                <div className="instruments">
+                </div>
+            )}
+            <form onSubmit={handleSubmit}>
+                <h2>Sign Up</h2>
+                <input name="username" placeholder="Username" onChange={handleChange} type="text"/>
+                <input name="email" placeholder="Email" onChange={handleChange} type="email"/>
+                <input name="password" placeholder="Password" onChange={handleChange} type="password"/>
+                <input name="re-enter-password" placeholder="Re-enter Password" onChange={handleChange} type="password"/>
+                <input name="instruments" placeholder="Instruments" onChange={handleChange} />
+                <input name="styles" placeholder="Styles" onChange={handleChange} />
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
     );
 }
