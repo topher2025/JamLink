@@ -20,6 +20,8 @@ export default function Home() {
             ) : (
                 <>
                     <h1>Welcome to JamLink!</h1>
+                    <h2>Connect. Create. Perform.</h2>
+                    <p>Jam with musicians around the World-any genre, any skill level. <br />Build your dream band or join someone else's. <strong>100% free</strong>.</p>
                     <p>Please <a href="/login">log in</a> or <a href="/signup">sign up</a>.</p>
                 </>
             )}
