@@ -45,15 +45,47 @@ JamLink is a free platform for musicians to connect, jam, and perform together -
 
 ### Prerequisites
 
-- Docker & Docker Compose
+- Docker & Docker Compose (if launching as a Docker container)
 - Python 3.11+
-- Node.js (for frontend dev)
+- Node.js 18+
+- npm
 
-### Clone the repo
 
+### Backend
+
+#### Unix System setup:
 ```bash
-git clone https://github.com/yourusername/jamlink.git
-cd jamlink
+cd backend/
+python -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+```
+
+#### Windows System setup:
+```bash
+cd backend/
+python -m venv env
+env\Scripts\activate
+pip install -r requirements.txt
+```
+
+#### Run backend:
+```bash
+python manage.py migrate
+python manage.py runserver
+```
+
+### Setup the frontend server:
+
+#### Setup:
+```bash
+cd frontend/
+npm install
+```
+
+#### Run frontend:
+```bash
+npm run dev
 ```
 
 ---
@@ -76,7 +108,7 @@ jamlink/
 > This is still in the beginning stages of development. This roadmap was last updated: **7/9/25**
 
 ### Phase 1: Basics: August, 2025
-- [ ] Create basic front and back ends
+- [x] Create basic front and back ends
 - [ ] User registration & login
 - [ ] Secure password hashing with bcrypt
 
